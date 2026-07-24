@@ -14,7 +14,7 @@
   {
     "title": "Vet Care",
     "desctiption": "VetCare is a veterinary clinic.",
-    "screenshot": "./public/site-images/vetcare.png",
+    "screenshot": "./site-images/vetcare.png",
     "url": "https://vet-care-teal.vercel.app"
   }
 ]
