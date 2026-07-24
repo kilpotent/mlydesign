@@ -4,7 +4,9 @@ import { useSearchParams } from "react-router-dom";
 export default function PortfolioGrid({ onImageClick }) {
   const [images, setImages] = useState([]);
   const [searchParams] = useSearchParams();
-  const category = searchParams.get("category") || "all";
+
+  const rawCategory = searchParams.get("category");
+  const category = rawCategory || "all";
 
   useEffect(() => {
     fetch("/JSON/portfolio.json")
@@ -26,10 +28,12 @@ export default function PortfolioGrid({ onImageClick }) {
   });
 
   useEffect(() => {
-    document
-      .getElementById("portfolio")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [category]);
+    if (rawCategory) {
+      document
+        .getElementById("portfolio")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [rawCategory]);
 
   return (
     <section
