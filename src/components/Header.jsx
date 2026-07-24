@@ -8,9 +8,8 @@ export default function Header() {
   const location = useLocation();
   const [searchParams] = useSearchParams();
 
-  const isSitesPage = location.pathname === "/sites";
-
   const isAboutPage = location.pathname === "/about";
+  const isSitesPage = location.pathname === "/sites";
   const activeCategory =
     searchParams.get("category") || (location.pathname === "/" ? "all" : null);
 
@@ -53,12 +52,11 @@ export default function Header() {
             {cat.label}
           </Link>
         ))}
-        <Link to="/about" onClick={closeBurger}>
-          {t("nav_about")}
-        </Link>
-
         <Link to="/sites" onClick={closeBurger}>
           {t("nav_sites")}
+        </Link>
+        <Link to="/about" onClick={closeBurger}>
+          {t("nav_about")}
         </Link>
       </nav>
 
@@ -75,6 +73,9 @@ export default function Header() {
             {cat.label}
           </Link>
         ))}
+        <Link to="/sites" className={isSitesPage ? "active" : ""}>
+          {t("nav_sites")}
+        </Link>
       </nav>
 
       <Link to="/" className="logo-link">
@@ -90,10 +91,6 @@ export default function Header() {
       <nav className="menu-bar" id="about" aria-label="Secondary navigation">
         <Link to="/about" className={isAboutPage ? "active" : ""}>
           {t("nav_about")}
-        </Link>
-
-        <Link to="/sites" className={isSitesPage ? "active" : ""}>
-          {t("nav_sites")}
         </Link>
         <a
           href="https://www.instagram.com/maria.lymperi"

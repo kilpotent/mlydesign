@@ -57,7 +57,7 @@ body {
 
 .menu-bar {
   display: flex;
-  gap: clamp(10px, 3vw, 60px);
+  gap: clamp(5px, 1.6vw, 60px);
   font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   margin-bottom: 10px;
   align-items: center;
@@ -765,6 +765,7 @@ body {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: normal;
   margin: 0 0 12px;
+  letter-spacing: 0.3px;
 }
 
 .sites-sub {

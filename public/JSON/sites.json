@@ -1,12 +1,12 @@
 [
   {
-    "title": "Psaropoula website",
+    "title": "Psaropoula",
     "desctiption": "Psaropoula is a traditional greek fish  tavern.",
     "screenshot": "./site-images/psaropoula.png",
     "url": "https://psaropoula.vercel.app"
   },
   {
-    "title": "Nostos website",
+    "title": "Nostos",
     "desctiption": "Nostos is a greek winery.",
     "screenshot": "./site-images/nostos.png",
     "url": "https://nostos-one.vercel.app"
