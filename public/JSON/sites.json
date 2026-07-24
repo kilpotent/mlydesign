@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Psaropoula website",
+    "desctiption": "Psaropoula is a traditional greek fish  tavern.",
+    "screenshot": "./site-images/psaropoula.png",
+    "url": "psaropoula-git-main-mlydesign.vercel.app"
+  },
+  {
+    "title": "Nostos website",
+    "desctiption": "Nostos is a greek winery.",
+    "screenshot": "./site-images/nostos.png",
+    "url": "https://nostos-one.vercel.app"
+  },
+  {
+    "title": "Vet Care",
+    "desctiption": "VetCare is a veterinary clinic.",
+    "screenshot": "./public/site-images/vetcare.png",
+    "url": "https://vet-care-teal.vercel.app"
+  }
+]
