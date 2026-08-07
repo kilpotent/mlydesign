@@ -1,20 +1,26 @@
 [
   {
     "title": "Psaropoula",
-    "desctiption": "Psaropoula is a traditional greek fish  tavern.",
+    "desctiption": "Psaropoula, is a traditional greek fish  tavern.",
     "screenshot": "./site-images/psaropoula.jpg",
     "url": "https://psaropoula.vercel.app"
   },
   {
     "title": "Nostos",
-    "desctiption": "Nostos is a greek winery.",
+    "desctiption": "Nostos, is a premium greek winery.",
     "screenshot": "./site-images/nostos.jpg",
     "url": "https://nostos-one.vercel.app"
   },
   {
     "title": "Vet Care",
-    "desctiption": "VetCare is a veterinary clinic.",
+    "desctiption": "VetCare, is a veterinary clinic.",
     "screenshot": "./site-images/vetcare.jpg",
     "url": "https://vet-care-teal.vercel.app"
+  },
+  {
+    "title": "GA Gym",
+    "desctiption": "GA-gym, is a gym for everyone.",
+    "screenshot": "./site-images/vetcare.jpg",
+    "url": "https://ga-gym.vercel.app"
   }
 ]
