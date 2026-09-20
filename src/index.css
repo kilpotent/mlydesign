@@ -1,0 +1,53 @@
+@font-face {
+  font-family: Garmot;
+  src: url(/fonts/GARMOT-GARMOT-REGULAR-400.OTF) format("opentype");
+}
+
+/* ================= COLOR VARIABLES ================= */
+
+:root {
+  --color-purple: #9370db;
+  --color-purple-dark: #7d5bc4;
+  --color-purple-deep: #855cd6;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-surface: #0a0a0a;
+  --color-text-muted: #e0e0e0;
+  --color-text-subtle: #cfcfcf;
+  --color-gold: #f5c518;
+  --color-success: #a8e6b8;
+  --color-error: #f5a5a5;
+}
+
+/* ================= RESET & BASE ================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:hover {
+  background-color: var(--color-white);
+  color: var(--color-purple-deep);
+}
+
+@media (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: "Courier New", Courier, monospace;
+}

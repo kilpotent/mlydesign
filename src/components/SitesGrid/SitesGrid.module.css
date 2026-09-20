@@ -1,0 +1,18 @@
+.sitesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.loadingText {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sitesGrid {
+    grid-template-columns: 1fr;
+  }
+}

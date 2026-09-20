@@ -1,0 +1,47 @@
+/* ================= SCROLL TO TOP ================= */
+
+.scrollTopBtn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--color-purple);
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--color-purple) var(--progress, 0%),
+    transparent var(--progress, 0%)
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.15s linear;
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+}
+
+.scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scrollTopBtn:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .scrollTopBtn {
+    width: 46px;
+    height: 46px;
+    right: 15px;
+    bottom: 15px;
+  }
+}

@@ -1,0 +1,173 @@
+/* ================= SERVICES ================= */
+
+.services {
+  position: relative;
+  background: black;
+  color: white;
+  padding: 100px 90px 140px;
+  text-transform: uppercase;
+}
+
+/* ================= INTRO ================= */
+
+.intro {
+  position: relative;
+  max-width: 1040px;
+  margin-bottom: 190px;
+}
+
+.intro h1 {
+  font-size: clamp(4.5rem, 4vw, 2.8rem);
+  font-weight: 500;
+  margin: 0 0 20px;
+  letter-spacing: 0.02em;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 1200px;
+}
+
+.tape {
+  position: absolute;
+  top: -100px;
+  right: -600px;
+  width: clamp(130px, 26vw, 530px);
+  height: auto;
+}
+
+/* ================= LIST ================= */
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.item {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 22px 0;
+}
+
+.num {
+  display: block;
+  font-style: italic;
+  font-size: 1.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.itemBody {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemBody h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.9vw, 8rem);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.itemBody p {
+  margin: 0;
+  flex: 1 1 320px;
+  color: var(--color-text-subtle);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* ================= ARROW BUTTON ================= */
+
+.arrowBtn {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  height: 56px;
+  min-width: 56px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-purple);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    padding 0.3s ease;
+}
+
+.arrowBtn:hover {
+  background: var(--color-purple-dark);
+  color: white;
+  transform: translateY(-2px);
+  padding: 0 26px 0 20px;
+}
+
+.arrowBtnLabel {
+  display: inline-block;
+  max-width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition:
+    max-width 0.3s ease,
+    margin-left 0.3s ease,
+    opacity 0.2s ease 0.05s;
+}
+
+.arrowBtn:hover .arrowBtnLabel {
+  max-width: 120px;
+  margin-left: 10px;
+  opacity: 1;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .services {
+    padding: 70px 24px 110px;
+  }
+
+  .intro {
+    max-width: 100%;
+  }
+
+  .intro h1 {
+    padding-right: 40%;
+  }
+
+  .tape {
+    top: -10px;
+    right: -10px;
+    width: 28vw;
+  }
+
+  .itemBody h2 {
+    white-space: normal;
+  }
+
+  .arrowBtn {
+    right: 24px;
+    bottom: 30px;
+    height: 48px;
+    min-width: 48px;
+    padding: 0 14px;
+  }
+}

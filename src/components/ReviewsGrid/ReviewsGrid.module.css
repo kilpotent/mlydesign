@@ -1,0 +1,136 @@
+/* ================= REVIEWS ================= */
+
+.reviewsLabel {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.reviewsTitle {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: normal;
+  margin: 0 0 50px;
+}
+
+/* ================= CAROUSEL ================= */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.arrowBtn {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-purple);
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.arrowBtn:hover {
+  color: white;
+  background: none;
+}
+
+.arrowBtn:first-child:hover {
+  transform: translateX(-4px);
+}
+
+.arrowBtn:last-child:hover {
+  transform: translateX(4px);
+}
+
+.reviewsGrid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  min-width: 0;
+  padding: 4px;
+  text-align: left;
+  scrollbar-width: none;
+}
+
+.reviewsGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.reviewCard {
+  flex: 0 0 calc((100% - 48px) / 3);
+  aspect-ratio: 1 / 1;
+  scroll-snap-align: start;
+  border: 1.5px solid var(--color-purple);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-surface);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.reviewCard::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.reviewQuote {
+  font-size: 4rem;
+  color: var(--color-purple);
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.reviewText {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.reviewAuthor {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.reviewStars {
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.reviewsLoading {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .reviewCard {
+    flex-basis: 100%;
+    aspect-ratio: 2/3;
+  }
+}

@@ -1,0 +1,113 @@
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px 40px;
+  padding: 90px 90px 40px;
+  background: black;
+  color: white;
+}
+
+.headerText h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.headerText p {
+  margin: 0;
+  max-width: 560px;
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.filterNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.filterNav a {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.filterNav a:hover,
+.filterNav a.active {
+  color: white;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  align-content: start;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  overflow: hidden;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* ================= WEBSITES ================= */
+
+.sitesWrapper {
+  padding: 40px 90px 90px;
+  min-height: 100vh;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 60px 24px 30px;
+  }
+
+  .filterNav {
+    padding-top: 80px;
+    gap: 16px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid img {
+    border-radius: 6px;
+  }
+
+  .grid img:hover {
+    transform: none;
+  }
+
+  .sitesWrapper {
+    padding: 24px 24px 60px;
+  }
+}

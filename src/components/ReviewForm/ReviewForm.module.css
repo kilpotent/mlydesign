@@ -1,0 +1,129 @@
+.submitButton {
+  background: var(--color-purple);
+  border: 1px solid var(--color-purple);
+  border-radius: 10px;
+  align-content: center;
+  padding: 7px;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  transform: 0.3sec ease;
+}
+
+/* ===== Review Form ===== */
+
+.reviewFormWrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.reviewFormTitle {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.reviewForm {
+  border: 1.5px solid var(--color-purple);
+  border-radius: 7px;
+  background: var(--color-black);
+  padding: 5%;
+  margin-bottom: 10%;
+}
+
+.formRow {
+  margin-bottom: 16px;
+}
+
+.formRow input,
+.formRow textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.formRow input::placeholder,
+.formRow textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.formRow input:focus,
+.formRow textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.starRow {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.starInput {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: color 0.15s ease;
+  user-select: none;
+}
+
+.starInput.hovered,
+.starInput.selected {
+  color: var(--color-gold);
+}
+
+.submitReview {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  padding: 14px 40px;
+  background: none;
+  border: 7px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.submitReview:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+.submitReview:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formMessage {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  min-height: 20px;
+}
+
+.formMessage.success {
+  color: var(--color-success);
+}
+
+.formMessage.error {
+  color: var(--color-error);
+}

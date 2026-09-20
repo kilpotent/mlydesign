@@ -1,0 +1,62 @@
+/* ================= FOOTER ================= */
+
+.siteFooter {
+  text-align: center;
+  padding: 30px 20px 10px 20px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    90deg,
+    var(--color-purple) 0%,
+    var(--color-black) 100%
+  );
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* ================= INFO ================= */
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  padding: 0 90px 40px 90px;
+}
+
+.footerLogo {
+  justify-self: start;
+  width: auto;
+  height: 65px;
+}
+
+.contactInfo {
+  justify-self: center;
+  font-size: 1rem;
+  line-height: 25px;
+}
+
+.siteFooter p {
+  margin: 0;
+}
+
+/* ================= SOCIAL ================= */
+
+.socialsContainer {
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  font-size: 1rem;
+  text-align: left;
+  text-decoration: none;
+}
+
+.footerSocial {
+  transform: 0.3s ease;
+}
+
+.footerSocial:hover {
+  color: var(--color-purple);
+}
