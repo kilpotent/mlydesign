@@ -60,3 +60,36 @@
 .footerSocial:hover {
   color: var(--color-purple);
 }
+
+/* ================= MOBILE ================= */
+
+/* keeps the 3-column layout (logo | contact | socials), just scaled down */
+@media (max-width: 768px) {
+  .siteFooter {
+    padding: 24px 12px 10px;
+    font-size: 0.7rem;
+  }
+
+  .footerContainer {
+    gap: 8px;
+    padding: 0 0 24px;
+  }
+
+  .footerLogo {
+    height: 36px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .contactInfo {
+    font-size: 0.65rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  .socialsContainer {
+    gap: 6px;
+    font-size: 0.65rem;
+    letter-spacing: 0;
+  }
+}

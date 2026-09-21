@@ -27,6 +27,16 @@
   box-sizing: border-box;
 }
 
+/* Backstop against sideways scrolling. On mobile, if any element is wider than
+   the screen, Chrome widens the layout viewport to fit it: fixed elements and
+   full-width blocks (footer, review form) then extend past the visible area and
+   the page pans sideways. Clipping on the root stops that from ever happening. */
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 a {
   text-decoration: none;
   color: inherit;

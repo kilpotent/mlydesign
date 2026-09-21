@@ -44,23 +44,31 @@ export default function CursorTrail() {
         }));
       }
       canvas.style.opacity = "1";
+      // Paint right now instead of waiting for the next animation frame, so
+      // the dot sits exactly under the cursor with no perceptible lag.
+      render();
     };
+    // Cursor left the window/tab: hide the dot and forget the trail so it
+    // doesn't streak in from the old position when the cursor comes back.
     const handleLeave = () => {
       canvas.style.opacity = "0";
+      started.current = false;
+      pointsRef.current = [];
+    };
+    const handleOut = (e: MouseEvent) => {
+      if (!e.relatedTarget) handleLeave();
     };
 
     window.addEventListener("mousemove", handleMove);
     window.addEventListener("resize", resize);
+    window.addEventListener("blur", handleLeave);
+    document.addEventListener("mouseout", handleOut);
     document.documentElement.addEventListener("mouseleave", handleLeave);
     document.documentElement.addEventListener("mouseenter", handleMove);
 
     let frame: number;
-    const draw = () => {
+    const render = () => {
       const points = pointsRef.current;
-      if (started.current) {
-        points.push({ x: mouse.current.x, y: mouse.current.y });
-        while (points.length > TRAIL_LENGTH) points.shift();
-      }
 
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.strokeStyle = COLOR;
@@ -82,7 +90,15 @@ export default function CursorTrail() {
         ctx.arc(mouse.current.x, mouse.current.y, HEAD_RADIUS, 0, Math.PI * 2);
         ctx.fill();
       }
+    };
 
+    const draw = () => {
+      const points = pointsRef.current;
+      if (started.current) {
+        points.push({ x: mouse.current.x, y: mouse.current.y });
+        while (points.length > TRAIL_LENGTH) points.shift();
+      }
+      render();
       frame = requestAnimationFrame(draw);
     };
     frame = requestAnimationFrame(draw);
@@ -93,6 +109,8 @@ export default function CursorTrail() {
     return () => {
       window.removeEventListener("mousemove", handleMove);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("blur", handleLeave);
+      document.removeEventListener("mouseout", handleOut);
       document.documentElement.removeEventListener("mouseleave", handleLeave);
       document.documentElement.removeEventListener("mouseenter", handleMove);
       cancelAnimationFrame(frame);

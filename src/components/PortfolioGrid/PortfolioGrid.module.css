@@ -90,9 +90,19 @@
     padding: 60px 24px 30px;
   }
 
+  /* row 1: five short filters spread across; row 2: the long website link */
   .filterNav {
-    padding-top: 80px;
-    gap: 16px 20px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 14px 8px;
+  }
+
+  .filterNav a {
+    font-size: min(0.85rem, 3.1vw);
+  }
+
+  .filterNav a:last-child {
+    flex-basis: 100%;
   }
 
   .grid {
