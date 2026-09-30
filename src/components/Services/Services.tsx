@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Services.module.css";
 
@@ -5,10 +6,6 @@ const SERVICE_KEYS = ["branding", "logo", "print", "packaging", "website"];
 
 export default function Services() {
   const { t } = useLanguage();
-
-  const scrollToNext = () => {
-    window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
-  };
 
   return (
     <section id="services" className={styles.services} aria-label="Services">
@@ -35,10 +32,10 @@ export default function Services() {
         ))}
       </ol>
 
-      <button
+      <Link
+        to="/about#contact"
         className={styles.arrowBtn}
-        onClick={scrollToNext}
-        aria-label="Scroll to next section"
+        aria-label="Go to contact"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +51,7 @@ export default function Services() {
           />
         </svg>
         <span className={styles.arrowBtnLabel}>{t("services_contact")}</span>
-      </button>
+      </Link>
     </section>
   );
 }

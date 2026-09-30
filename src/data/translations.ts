@@ -53,6 +53,11 @@ export const translations: Record<Lang, Record<string, string>> = {
     projects_sub:
       "Branding, Logo Design, Print, Packaging & Web Design & Development, with a focus on identity, functionality and the consistent execution of every idea.",
     services_contact: "Contact",
+    contact_title: "Get in touch",
+    contact_name_placeholder: "Your name",
+    contact_email_placeholder: "Your email",
+    contact_message_placeholder: "Your message...",
+    contact_submit: "Send message",
   },
   gr: {
     nav_all: "Όλα",
@@ -107,5 +112,10 @@ export const translations: Record<Lang, Record<string, string>> = {
     projects_sub:
       "Branding, Logo Design, Print, Packaging & Web Design & Development, με έμφαση στην ταυτότητα, τη λειτουργικότητα και τη συνεπή εφαρμογή κάθε ιδέας.",
     services_contact: "Επικοινωνία",
+    contact_title: "Επικοινωνήστε μαζί μας",
+    contact_name_placeholder: "Το όνομά σας",
+    contact_email_placeholder: "Το email σας",
+    contact_message_placeholder: "Το μήνυμά σας...",
+    contact_submit: "Αποστολή μηνύματος",
   },
 };

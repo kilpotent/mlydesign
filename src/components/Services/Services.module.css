@@ -160,6 +160,10 @@
     max-width: 100%;
   }
 
+  .num {
+    font-size: 1.1rem;
+  }
+
   /* was 4.5rem, which pushed "SERVICES" past the screen edge and made the
      whole page scroll sideways; sized to the viewport so it always fits
      beside the tape (9 chars in monospace ≈ 5.4 × font-size) */
@@ -169,9 +173,9 @@
   }
 
   .tape {
-    top: -10px;
-    right: -10px;
-    width: 28vw;
+    top: -90px;
+    right: -25px;
+    width: 43vw;
   }
 
   .itemBody {
@@ -182,11 +186,12 @@
 
   .itemBody h2 {
     white-space: normal;
+    font-size: 1.9rem;
   }
 
   .itemBody p {
     flex: 1 1 100%;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 
   .arrowBtn {

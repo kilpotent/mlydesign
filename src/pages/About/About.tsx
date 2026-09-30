@@ -1,10 +1,20 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Contact from "../../components/Contact/Contact";
 import styles from "./About.module.css";
 
 export default function About() {
   const { t } = useLanguage();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [location.hash]);
 
   return (
     <div className={styles.aboutPageBg}>
@@ -51,6 +61,8 @@ export default function About() {
               <p>{t("about_point3")}</p>
             </li>
           </ol>
+
+          <Contact />
         </section>
       </main>
       <Footer />

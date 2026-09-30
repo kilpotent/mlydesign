@@ -7,8 +7,11 @@ export default function ScrollTopButton() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShow(window.scrollY > 300);
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      // Hide once the page can't scroll any further, e.g. so it doesn't sit
+      // on top of the footer while the visitor is reading it.
+      const atBottom = scrollable > 0 && window.scrollY >= scrollable - 2;
+      setShow(window.scrollY > 300 && !atBottom);
       const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
       btnRef.current?.style.setProperty(
         "--progress",

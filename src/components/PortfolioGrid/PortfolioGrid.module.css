@@ -98,7 +98,7 @@
   }
 
   .filterNav a {
-    font-size: min(0.85rem, 3.1vw);
+    font-size: min(1.1rem, 3.3vw);
   }
 
   .filterNav a:last-child {

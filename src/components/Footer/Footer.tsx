@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Footer.module.css";
 import logo from "../../../public/images/white-logo.png";
@@ -13,10 +14,9 @@ export default function Footer() {
           alt="Mly Design footer logo"
           className={styles.footerLogo}
         />
-        <p className={styles.contactInfo}>
-          mlydsg@hotmail.com
-          <br /> <i className="bi bi-phone"></i> +30 698 738 7416
-        </p>
+        <Link to="/about#contact" className={styles.contactLink}>
+          {t("services_contact")}
+        </Link>
         <div className={styles.socialsContainer}>
           <a
             href="https://www.facebook.com/profile.php?id=61584868597929&locale=el_GR"

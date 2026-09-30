@@ -1,0 +1,112 @@
+/* ================= CONTACT ================= */
+
+.contactSection {
+  max-width: 700px;
+  margin: 100px auto 0;
+  padding: 0 0 20px;
+  text-align: center;
+}
+
+.contactTitle {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 20px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  margin: 0 0 40px;
+}
+
+.phone a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.phone a:hover {
+  color: var(--color-purple);
+}
+
+/* ================= FORM ================= */
+
+.contactForm {
+  border: 1.5px solid var(--color-purple);
+  border-radius: 7px;
+  background: var(--color-black);
+  padding: 5%;
+  text-align: left;
+}
+
+.formRow {
+  margin-bottom: 16px;
+}
+
+.formRow input,
+.formRow textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.formRow input::placeholder,
+.formRow textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.formRow input:focus,
+.formRow textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.submitBtn {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  padding: 14px 40px;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.submitBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .contactSection {
+    margin-top: 60px;
+    padding: 0 4px 20px;
+  }
+
+  .phone {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+}

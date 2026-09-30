@@ -23,13 +23,26 @@
 .footerLogo {
   justify-self: start;
   width: auto;
-  height: 65px;
+  height: 100px;
 }
 
-.contactInfo {
+.contactLink {
   justify-self: center;
-  font-size: 1rem;
-  line-height: 25px;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  padding: 10px 28px;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.contactLink:hover {
+  border-color: var(--color-purple);
+  color: var(--color-purple);
 }
 
 .siteFooter p {
@@ -71,15 +84,15 @@
   }
 
   .footerLogo {
-    height: 36px;
+    height: 48px;
     max-width: 100%;
     object-fit: contain;
   }
 
-  .contactInfo {
+  .contactLink {
     font-size: 0.65rem;
-    line-height: 1.6;
-    letter-spacing: 0;
+    letter-spacing: 0.02em;
+    padding: 8px 16px;
   }
 
   .socialsContainer {
