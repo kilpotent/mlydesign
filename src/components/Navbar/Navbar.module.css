@@ -21,27 +21,12 @@
   height: auto;
 }
 
-/* ================= UTILITY NAV (socials + language) ================= */
+/* ================= UTILITY NAV (language) ================= */
 
 .utilityNav {
   display: flex;
   gap: clamp(14px, 1.2vw, 32px);
   align-items: center;
-}
-
-.utilityNav a {
-  display: block;
-  color: white;
-}
-
-.socialIcon {
-  display: block;
-  color: white;
-  transition: opacity 0.2s ease;
-}
-
-.utilityNav a:hover .socialIcon {
-  opacity: 0.7;
 }
 
 /* ================= BURGER BUTTON ================= */
@@ -96,10 +81,7 @@
   gap: 32px;
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(ellipse 90% 45% at 50% 14%, rgba(147, 112, 219, 0.55), transparent 60%),
-    radial-gradient(ellipse 140% 70% at 50% 24%, rgba(147, 112, 219, 0.9), transparent 70%),
-    linear-gradient(180deg, #1c1330 0%, #0d0718 55%, #030106 100%);
+  overflow: hidden;
   z-index: 200000;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.4rem;
@@ -111,6 +93,31 @@
     opacity 0.35s ease,
     transform 0.35s ease,
     visibility 0s linear 0.35s;
+}
+
+/* Blurred copy of the home hero photo, oversized past the viewport edges so
+   the blur doesn't pull in transparent pixels at the border. */
+.burgerMenu::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background-image: url("/background-images/background-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(24px);
+  z-index: -2;
+}
+
+/* Purple tint over the blurred photo so the menu links stay readable. */
+.burgerMenu::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 45% at 50% 14%, rgba(147, 112, 219, 0.55), transparent 60%),
+    radial-gradient(ellipse 140% 70% at 50% 24%, rgba(147, 112, 219, 0.75), transparent 70%),
+    linear-gradient(180deg, rgba(20, 12, 35, 0.75) 0%, rgba(8, 4, 16, 0.85) 55%, rgba(2, 1, 4, 0.92) 100%);
+  z-index: -1;
 }
 
 .burgerMenu.open {
@@ -213,7 +220,7 @@
     padding: 20px 20px 10px;
   }
 
-  /* socials + language move into the burger menu */
+  /* language toggle moves into the burger menu */
   .utilityNav {
     display: none;
   }
@@ -221,21 +228,7 @@
   .menuExtras {
     display: flex;
     align-items: center;
-    gap: 28px;
     margin-top: 12px;
-  }
-
-  .menuExtras a {
-    padding: 0;
-  }
-
-  .menuExtras a::after {
-    display: none;
-  }
-
-  .menuExtras .socialIcon {
-    width: 24px;
-    height: 24px;
   }
 
   .menuExtras .langToggle {
