@@ -58,6 +58,11 @@ export const translations: Record<Lang, Record<string, string>> = {
     contact_email_placeholder: "Your email",
     contact_message_placeholder: "Your message...",
     contact_submit: "Send message",
+    contact_sending: "Sending...",
+    contact_success: "Thank you! Your message has been sent.",
+    contact_error:
+      "Something went wrong. Please try again, or email us directly at mlydsg@hotmail.com.",
+    contact_error_fields: "Please fill in all fields.",
   },
   gr: {
     nav_all: "Όλα",
@@ -117,5 +122,10 @@ export const translations: Record<Lang, Record<string, string>> = {
     contact_email_placeholder: "Το email σας",
     contact_message_placeholder: "Το μήνυμά σας...",
     contact_submit: "Αποστολή μηνύματος",
+    contact_sending: "Αποστολή...",
+    contact_success: "Ευχαριστούμε! Το μήνυμά σας στάλθηκε.",
+    contact_error:
+      "Κάτι πήγε στραβά. Δοκιμάστε ξανά, ή στείλτε μας email απευθείας στο mlydsg@hotmail.com.",
+    contact_error_fields: "Παρακαλώ συμπληρώστε όλα τα πεδία.",
   },
 };

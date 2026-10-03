@@ -97,6 +97,25 @@
   border-color: white;
 }
 
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formMessage {
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 12px 0 0;
+}
+
+.formMessage.success {
+  color: var(--color-success);
+}
+
+.formMessage.error {
+  color: var(--color-error);
+}
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {

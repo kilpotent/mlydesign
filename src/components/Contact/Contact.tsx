@@ -3,22 +3,52 @@ import type { ChangeEvent, FormEvent } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Contact.module.css";
 
-const CONTACT_EMAIL = "mlydsg@hotmail.com";
 const CONTACT_PHONE = "+30 698 738 7416";
+
+// Forwards submissions to mlydsg@hotmail.com via Formspree.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljdqawe";
+
+interface FormMessage {
+  text: string;
+  type: "" | "success" | "error";
+}
 
 export default function Contact() {
   const { t } = useLanguage();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+  const [formMessage, setFormMessage] = useState<FormMessage>({ text: "", type: "" });
 
-  // There's no backend to send mail from, so submitting hands the message to
-  // the visitor's own mail app, prefilled and addressed to us.
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Message from ${name || "the website"}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setFormMessage({ text: t("contact_error_fields"), type: "error" });
+      return;
+    }
+
+    setSending(true);
+    setFormMessage({ text: "", type: "" });
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      setFormMessage({ text: t("contact_success"), type: "success" });
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setFormMessage({ text: t("contact_error"), type: "error" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -63,9 +93,16 @@ export default function Contact() {
             required
           />
         </div>
-        <button type="submit" className={styles.submitBtn}>
-          {t("contact_submit")}
+        <button type="submit" disabled={sending} className={styles.submitBtn}>
+          {sending ? t("contact_sending") : t("contact_submit")}
         </button>
+        {formMessage.text && (
+          <p
+            className={`${styles.formMessage} ${formMessage.type === "success" ? styles.success : styles.error}`}
+          >
+            {formMessage.text}
+          </p>
+        )}
       </form>
     </section>
   );
