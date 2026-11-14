@@ -1,25 +1,37 @@
 [
   {
+    "title": "Vento",
+    "description": "Vento, is a coffee house in Lamia.",
+    "screenshot": "./site-images/vento-cafe.jpg",
+    "url": "https://ventocafelamia.gr"
+  },
+  {
+    "title": "Blend Street Espresso",
+    "description": "Blend Street Espresso, is a specialty coffee bar.",
+    "screenshot": "./site-images/blend.jpg",
+    "url": "https://www.blendstreetespresso.gr"
+  },
+  {
     "title": "Psaropoula",
-    "desctiption": "Psaropoula, is a traditional greek fish  tavern.",
+    "description": "Psaropoula, is a traditional greek fish  tavern.",
     "screenshot": "./site-images/psaropoula.jpg",
     "url": "https://psaropoula.vercel.app"
   },
   {
     "title": "Nostos",
-    "desctiption": "Nostos, is a premium greek winery.",
+    "description": "Nostos, is a premium greek winery.",
     "screenshot": "./site-images/nostos.jpg",
     "url": "https://nostos-one.vercel.app"
   },
   {
     "title": "Vet Care",
-    "desctiption": "VetCare, is a veterinary clinic.",
+    "description": "VetCare, is a veterinary clinic.",
     "screenshot": "./site-images/vetcare.jpg",
     "url": "https://vet-care-teal.vercel.app"
   },
   {
     "title": "GA Gym",
-    "desctiption": "GA-gym, is a gym for everyone.",
+    "description": "GA-gym, is a gym for everyone.",
     "screenshot": "./site-images/ga-gym.webp",
     "url": "https://ga-gym.vercel.app"
   }
